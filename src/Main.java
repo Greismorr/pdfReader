@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-
 import interfaces.IDocument;
 import pdf.PDFDocument;
 import java.lang.ClassLoader;
@@ -22,7 +21,7 @@ public class Main {
 	  		try{		  		
 				jars[i] = (new File("./plugins/" + plugins[i])).toURI().toURL();
 				String pathToString = jars[i].toString();
-				String pluginName = pathToString.substring(pathToString.lastIndexOf('/') + 1).replace(".jar", "");
+				String pluginName = pathToString.substring(pathToString.lastIndexOf('/') + 1).replace(".jar", "").toLowerCase();
 
 				fileTypes.add(pluginName);
 			}catch(MalformedURLException error){
