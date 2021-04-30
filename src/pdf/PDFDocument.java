@@ -74,11 +74,7 @@ public class PDFDocument implements IDocument{
 	}
 	
 	private boolean documentIsReadable() {
-        if(this.countAllLines().length <= 1) {
-        	return false;
-        }else {
-        	return true;
-        }
+       return this.countAllLines().length > 1;
 	}
 	
 	private void getPage() {
